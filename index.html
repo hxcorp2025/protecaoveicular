@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota Brasil | Clube de Benefícios e Proteção Veicular</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --blue-primary: #007AFF;
+            --blue-light: #5AC8FA;
+            --blue-dark: #0051D4;
+            --black: #000000;
+            --dark-gray: #1C1C1E;
+            --gray: #2C2C2E;
+            --light-gray: #3A3A3C;
+            --white: #FFFFFF;
+            --silver: #E5E5EA;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, var(--blue-primary), var(--blue-light), var(--blue-primary));
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .top-bar span { color: var(--black); }
+        
+        /* Header */
+        header {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--black) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(0, 122, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(90, 200, 250, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* Diego Rox Badges - 5 posições */
+        .diego-rox-badge {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            color: var(--black);
+            padding: 8px 20px;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 2px;
+            position: absolute;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
+        }
+        
+        .badge-1 { top: 80px; left: 30px; }
+        .badge-2 { top: 80px; right: 30px; }
+        .badge-3 { top: 180px; left: 50%; transform: translateX(-50%); }
+        .badge-4 { top: 350px; left: 50px; }
+        .badge-5 { top: 350px; right: 50px; border: 2px solid var(--blue-primary); background: transparent; color: var(--blue-light); }
+        
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .logo-text {
+            font-size: clamp(14px, 3vw, 18px);
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: var(--silver);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .main-headline {
+            font-size: clamp(40px, 10vw, 90px);
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 10px;
+        }
+        
+        .main-headline .white { color: var(--white); }
+        .main-headline .blue {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .sub-headline {
+            font-size: clamp(16px, 2.5vw, 22px);
+            font-weight: 400;
+            color: var(--silver);
+            max-width: 700px;
+            margin: 30px auto;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            color: var(--white);
+            padding: 18px 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 122, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 122, 255, 0.5);
+        }
+        
+        /* Sections */
+        section { padding: 100px 20px; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title .blue {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(180deg, var(--black), var(--dark-gray));
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--silver);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--dark-gray);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, var(--gray), var(--light-gray));
+            padding: 40px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--blue-primary);
+            box-shadow: 0 20px 60px rgba(0, 122, 255, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .benefit-desc {
+            font-size: 14px;
+            color: var(--silver);
+            line-height: 1.7;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--black);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--dark-gray);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .check { color: var(--blue-light); font-size: 24px; }
+        .cross { color: #FF3B30; font-size: 24px; }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(180deg, var(--dark-gray), var(--black));
+        }
+        
+        .faq-item {
+            background: var(--gray);
+            margin-bottom: 15px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .faq-question:hover { background: var(--light-gray); }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: var(--silver);
+            font-size: 14px;
+            line-height: 1.8;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        
+        .faq-icon {
+            font-size: 24px;
+            color: var(--blue-primary);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Pre-Footer - Corporate Info */
+        .corporate-section {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            padding: 60px 20px;
+        }
+        
+        .corporate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+        
+        .corporate-item h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+        
+        .corporate-item p {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-company {
+            font-size: 14px;
+            color: var(--silver);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer-copyright {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar { gap: 15px; font-size: 10px; }
+            .diego-rox-badge { font-size: 11px; padding: 6px 14px; }
+            .badge-1, .badge-2 { top: 60px; }
+            .badge-3 { top: 130px; }
+            .badge-4, .badge-5 { top: 280px; }
+            .badge-4 { left: 20px; }
+            .badge-5 { right: 20px; }
+            section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>🛡️ Proteção Veicular Completa</span>
+        <span>✅ +5.000 Associados Ativos</span>
+        <span>💰 Economia de até 70% vs Seguradoras</span>
+        <span>⭐ 4.9/5.0 Avaliação</span>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-bg"></div>
+        
+        <!-- DIEGO ROX - 5 posições -->
+        <div class="diego-rox-badge badge-1">DIEGO ROX</div>
+        <div class="diego-rox-badge badge-2">DIEGO ROX</div>
+        <div class="diego-rox-badge badge-3">DIEGO ROX</div>
+        <div class="diego-rox-badge badge-4">DIEGO ROX</div>
+        <div class="diego-rox-badge badge-5">DIEGO ROX</div>
+        
+        <div class="header-content">
+            <p class="logo-text">Rota Brasil</p>
+            <h1 class="main-headline">
+                <span class="white">PROTEÇÃO</span><br>
+                <span class="blue">INTELIGENTE</span>
+            </h1>
+            <p class="sub-headline">
+                Associe-se ao maior clube de benefícios e proteção veicular do Brasil. 
+                Economize até 70% comparado às seguradoras tradicionais e tenha acesso 
+                a descontos exclusivos em mais de 30.000 estabelecimentos parceiros.
+            </p>
+            <a href="#contato" class="cta-button">Quero Me Associar</a>
+        </div>
+    </header>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Resultados <span class="blue">Reais</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5.000+</div>
+                    <div class="stat-label">Associados Protegidos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Economia Média</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30k+</div>
+                    <div class="stat-label">Parceiros com Desconto</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Assistência Disponível</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Benefícios <span class="blue">Exclusivos</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚗</div>
+                    <h3 class="benefit-title">Proteção Veicular Completa</h3>
+                    <p class="benefit-desc">Cobertura contra roubo, furto, colisão, incêndio e fenômenos naturais. Proteção total para seu veículo com valores justos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3 class="benefit-title">Telemedicina 24h</h3>
+                    <p class="benefit-desc">Consultas médicas online ilimitadas com especialistas. Atendimento para você e toda sua família, sem filas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💊</div>
+                    <h3 class="benefit-title">Descontos em Farmácias</h3>
+                    <p class="benefit-desc">Até 80% de desconto em medicamentos nas principais redes: Drogasil, Droga Raia, Pague Menos e mais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🍔</div>
+                    <h3 class="benefit-title">Gastronomia</h3>
+                    <p class="benefit-desc">Descontos em restaurantes, churrascarias, pizzarias e delivery. Economize em todas as suas refeições.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎬</div>
+                    <h3 class="benefit-title">Entretenimento</h3>
+                    <p class="benefit-desc">Cinemas, parques, shows e eventos com preços especiais. Diversão garantida para toda a família.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⛽</div>
+                    <h3 class="benefit-title">Combustível</h3>
+                    <p class="benefit-desc">Cashback e descontos em postos de combustível parceiros. Economize toda vez que abastecer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Rota Brasil vs <span class="blue">Seguradoras</span></h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Recurso</th>
+                        <th>Rota Brasil</th>
+                        <th>Seguradoras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Preço Justo (até 70% menor)</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td>Clube de Benefícios Incluso</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td>Telemedicina 24h</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td>Assistência 24h Nacional</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Sem Análise de Perfil Restritiva</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td>+30.000 Parceiros com Desconto</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas <span class="blue">Frequentes</span></h2>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Qual a diferença entre proteção veicular e seguro?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A proteção veicular é oferecida por associações sem fins lucrativos, onde os custos são rateados entre os associados. Isso permite valores até 70% menores que seguradoras tradicionais, mantendo coberturas similares e ainda oferecendo benefícios extras como clube de vantagens.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais veículos podem ser protegidos?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Protegemos carros, motos, caminhões, vans e utilitários de qualquer ano e modelo. Diferente das seguradoras, não temos restrições por idade do veículo ou perfil do condutor.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como funciona o clube de benefícios?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ao se associar, você recebe acesso a mais de 30.000 estabelecimentos parceiros com descontos de até 90%. São farmácias, restaurantes, academias, cinemas, postos de combustível, lojas online e muito mais. Tudo via aplicativo ou site exclusivo.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Qual o prazo para acionar a proteção?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Após a vistoria aprovada, sua proteção está ativa imediatamente. Nossa assistência 24h funciona em todo o território nacional, com atendimento rápido e eficiente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pre-Footer: Corporate Info -->
+    <section class="corporate-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 40px;">Informações Corporativas</h2>
+            <div class="corporate-grid">
+                <div class="corporate-item">
+                    <h4>📄 Razão Social</h4>
+                    <p>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</p>
+                </div>
+                <div class="corporate-item">
+                    <h4>🏢 CNPJ</h4>
+                    <p>40.310.957/0001-59</p>
+                </div>
+                <div class="corporate-item">
+                    <h4>📍 Endereço</h4>
+                    <p>Rua Rui Barbosa, S/N<br>Centro - Conceição da Feira/BA<br>CEP: 44.320-000</p>
+                </div>
+                <div class="corporate-item">
+                    <h4>📞 Contato</h4>
+                    <p>(71) 9944-2773<br>(71) 8833-4423<br>cagsjc@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-company">
+                <strong>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</strong><br>
+                CNPJ: 40.310.957/0001-59<br>
+                Rua Rui Barbosa, S/N - Centro - Conceição da Feira/BA - CEP: 44.320-000<br>
+                Telefone: (71) 9944-2773 | (71) 8833-4423 | E-mail: cagsjc@gmail.com
+            </p>
+            <p class="footer-copyright">
+                © 2020-2025 Rota Brasil - Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    if (i !== item) i.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
