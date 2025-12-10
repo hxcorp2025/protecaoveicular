@@ -3,7 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rota Brasil | Clube de Benefícios e Proteção Veicular</title>
+
+    <!-- SEO Meta Tags -->
+    <title>DIEGO ROX | Rota Brasil - Clube de Benefícios e Proteção Veicular</title>
+    <meta name="description" content="DIEGO ROX - Consultor oficial do Clube de Benefícios de Proteção Veicular Rota Brasil. Economize até 70% em proteção veicular, telemedicina 24h e +30.000 parceiros com desconto. CNPJ 40.310.957/0001-59.">
+    <meta name="keywords" content="DIEGO ROX, Diego Rox, proteção veicular, Rota Brasil, clube de benefícios, seguro veicular, proteção de carro, CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL, telemedicina, assistência 24h, Conceição da Feira, Bahia">
+    <meta name="author" content="DIEGO ROX - Clube de Benefícios de Proteção Veicular Rota Brasil">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://protecaoveicularrotabrasil.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://protecaoveicularrotabrasil.com/">
+    <meta property="og:title" content="DIEGO ROX | Rota Brasil - Proteção Veicular com até 70% de Economia">
+    <meta property="og:description" content="DIEGO ROX é consultor oficial do Clube de Benefícios de Proteção Veicular Rota Brasil. Proteção completa para seu veículo + clube de benefícios com +30.000 parceiros.">
+    <meta property="og:site_name" content="DIEGO ROX - Rota Brasil Proteção Veicular">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DIEGO ROX | Rota Brasil - Proteção Veicular">
+    <meta name="twitter:description" content="Consultor DIEGO ROX - Clube de Benefícios de Proteção Veicular Rota Brasil. Economize até 70%!">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL",
+        "alternateName": ["Rota Brasil", "DIEGO ROX Proteção Veicular", "Diego Rox"],
+        "url": "https://protecaoveicularrotabrasil.com",
+        "description": "DIEGO ROX - Consultor do Clube de Benefícios de Proteção Veicular Rota Brasil. Proteção veicular completa com economia de até 70%.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Rui Barbosa, S/N",
+            "addressLocality": "Conceição da Feira",
+            "addressRegion": "BA",
+            "postalCode": "44320-000",
+            "addressCountry": "BR"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+55-71-99442773",
+                "contactType": "sales",
+                "areaServed": "BR",
+                "availableLanguage": "Portuguese"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+55-71-88334423",
+                "contactType": "customer service",
+                "areaServed": "BR",
+                "availableLanguage": "Portuguese"
+            }
+        ],
+        "email": "suporte@protecaoveicularrotabrasil.com",
+        "taxID": "40.310.957/0001-59",
+        "foundingDate": "2020",
+        "employee": {
+            "@type": "Person",
+            "name": "DIEGO ROX",
+            "jobTitle": "Consultor de Proteção Veicular"
+        }
+    }
+    </script>
+
+    <!-- Schema.org para Serviço Local -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Proteção Veicular",
+        "provider": {
+            "@type": "Organization",
+            "name": "CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Brasil"
+        },
+        "description": "DIEGO ROX oferece proteção veicular completa através do Clube de Benefícios Rota Brasil. Cobertura contra roubo, furto, colisão e mais com economia de até 70%.",
+        "offers": {
+            "@type": "Offer",
+            "description": "Proteção veicular com desconto de até 70% comparado a seguradoras tradicionais"
+        }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,6 +112,25 @@
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Screen Reader Only - SEO Text (indexável mas oculto visualmente) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Reset mark tag para manter estilo do badge */
+        mark.diego-rox-badge {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            color: var(--black);
         }
         
         /* Top Bar */
@@ -325,10 +430,54 @@
             transition: transform 0.3s ease;
         }
         
+        /* Diego Section */
+        .diego-section {
+            background: linear-gradient(180deg, var(--black), var(--dark-gray));
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .diego-info {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--silver);
+        }
+
+        .diego-info strong {
+            color: var(--blue-light);
+        }
+
+        .diego-contact {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        .diego-contact a {
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .diego-contact a:hover {
+            color: var(--blue-light);
+        }
+
         /* Pre-Footer - Corporate Info */
         .corporate-section {
             background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
             padding: 60px 20px;
+        }
+
+        .corporate-section a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .corporate-section a:hover {
+            text-decoration: underline;
         }
         
         .corporate-grid {
@@ -371,6 +520,19 @@
             font-size: 12px;
             color: rgba(255,255,255,0.5);
         }
+
+        footer a {
+            color: var(--blue-light);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer strong {
+            color: var(--blue-light);
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -395,28 +557,32 @@
     </div>
     
     <!-- Header -->
-    <header>
+    <header role="banner">
         <div class="header-bg"></div>
-        
-        <!-- DIEGO ROX - 5 posições -->
-        <div class="diego-rox-badge badge-1">DIEGO ROX</div>
-        <div class="diego-rox-badge badge-2">DIEGO ROX</div>
-        <div class="diego-rox-badge badge-3">DIEGO ROX</div>
-        <div class="diego-rox-badge badge-4">DIEGO ROX</div>
-        <div class="diego-rox-badge badge-5">DIEGO ROX</div>
-        
+
+        <!-- DIEGO ROX - Consultor Oficial - Tags semânticas para SEO -->
+        <strong class="diego-rox-badge badge-1" title="DIEGO ROX - Consultor de Proteção Veicular">DIEGO ROX</strong>
+        <strong class="diego-rox-badge badge-2" title="DIEGO ROX - Rota Brasil">DIEGO ROX</strong>
+        <mark class="diego-rox-badge badge-3" title="Fale com DIEGO ROX">DIEGO ROX</mark>
+        <strong class="diego-rox-badge badge-4" title="DIEGO ROX - Proteção Veicular Bahia">DIEGO ROX</strong>
+        <strong class="diego-rox-badge badge-5" title="DIEGO ROX - Atendimento Personalizado">DIEGO ROX</strong>
+
+        <!-- Texto oculto para SEO - indexável mas não visível -->
+        <h2 class="sr-only">DIEGO ROX - Consultor Oficial do Clube de Benefícios de Proteção Veicular Rota Brasil</h2>
+
         <div class="header-content">
-            <p class="logo-text">Rota Brasil</p>
+            <p class="logo-text">Rota Brasil <span class="sr-only">- DIEGO ROX Consultor</span></p>
             <h1 class="main-headline">
                 <span class="white">PROTEÇÃO</span><br>
                 <span class="blue">INTELIGENTE</span>
+                <span class="sr-only">com DIEGO ROX - CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</span>
             </h1>
             <p class="sub-headline">
-                Associe-se ao maior clube de benefícios e proteção veicular do Brasil. 
-                Economize até 70% comparado às seguradoras tradicionais e tenha acesso 
+                <strong>DIEGO ROX</strong> apresenta: Associe-se ao maior clube de benefícios e proteção veicular do Brasil.
+                Economize até 70% comparado às seguradoras tradicionais e tenha acesso
                 a descontos exclusivos em mais de 30.000 estabelecimentos parceiros.
             </p>
-            <a href="#contato" class="cta-button">Quero Me Associar</a>
+            <a href="#contato" class="cta-button" title="Fale com DIEGO ROX - Associe-se agora">Quero Me Associar</a>
         </div>
     </header>
     
@@ -577,42 +743,78 @@
         </div>
     </section>
     
+    <!-- Seção DIEGO ROX - Consultor -->
+    <section class="diego-section" id="contato">
+        <div class="container">
+            <h2 class="section-title"><span class="blue">DIEGO ROX</span> - Seu Consultor</h2>
+            <article class="diego-info" itemscope itemtype="https://schema.org/Person">
+                <p>
+                    <strong itemprop="name">DIEGO ROX</strong> é consultor oficial do
+                    <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                        <strong itemprop="name">CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</strong>
+                    </span>.
+                    Com atendimento personalizado, <span itemprop="jobTitle">DIEGO ROX</span> ajuda você a encontrar
+                    a melhor proteção para seu veículo com economia de até 70%.
+                </p>
+                <p class="diego-contact">
+                    Fale agora com <strong>DIEGO ROX</strong>:
+                    <a href="tel:+5571994427733" itemprop="telephone">(71) 9944-2773</a> |
+                    <a href="tel:+5571883344233" itemprop="telephone">(71) 8833-4423</a>
+                </p>
+            </article>
+        </div>
+    </section>
+
     <!-- Pre-Footer: Corporate Info -->
-    <section class="corporate-section">
+    <section class="corporate-section" itemscope itemtype="https://schema.org/Organization">
         <div class="container">
             <h2 class="section-title" style="color: white; margin-bottom: 40px;">Informações Corporativas</h2>
             <div class="corporate-grid">
                 <div class="corporate-item">
                     <h4>📄 Razão Social</h4>
-                    <p>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</p>
+                    <p itemprop="legalName"><strong>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</strong></p>
+                    <meta itemprop="name" content="CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL">
+                    <meta itemprop="alternateName" content="Rota Brasil">
+                    <meta itemprop="alternateName" content="DIEGO ROX Proteção Veicular">
                 </div>
                 <div class="corporate-item">
                     <h4>🏢 CNPJ</h4>
-                    <p>40.310.957/0001-59</p>
+                    <p itemprop="taxID">40.310.957/0001-59</p>
                 </div>
-                <div class="corporate-item">
+                <div class="corporate-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                     <h4>📍 Endereço</h4>
-                    <p>Rua Rui Barbosa, S/N<br>Centro - Conceição da Feira/BA<br>CEP: 44.320-000</p>
+                    <p>
+                        <span itemprop="streetAddress">Rua Rui Barbosa, S/N</span><br>
+                        <span itemprop="addressLocality">Centro - Conceição da Feira</span>/<span itemprop="addressRegion">BA</span><br>
+                        CEP: <span itemprop="postalCode">44.320-000</span>
+                    </p>
                 </div>
                 <div class="corporate-item">
-                    <h4>📞 Contato</h4>
-                    <p>(71) 9944-2773<br>(71) 8833-4423<br>suporte@protecaoveicularrotabrasil.com</p>
+                    <h4>📞 Contato - DIEGO ROX</h4>
+                    <p>
+                        <a href="tel:+5571994427733" itemprop="telephone">(71) 9944-2773</a><br>
+                        <a href="tel:+5571883344233" itemprop="telephone">(71) 8833-4423</a><br>
+                        <a href="mailto:suporte@protecaoveicularrotabrasil.com" itemprop="email">suporte@protecaoveicularrotabrasil.com</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p class="footer-company">
+                <strong>DIEGO ROX</strong> - Consultor Oficial<br>
                 <strong>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL</strong><br>
                 CNPJ: 40.310.957/0001-59<br>
                 Rua Rui Barbosa, S/N - Centro - Conceição da Feira/BA - CEP: 44.320-000<br>
-                Telefone: (71) 9944-2773 | (71) 8833-4423 | E-mail: suporte@protecaoveicularrotabrasil.com
+                Telefone: <a href="tel:+5571994427733">(71) 9944-2773</a> | <a href="tel:+5571883344233">(71) 8833-4423</a><br>
+                E-mail: <a href="mailto:suporte@protecaoveicularrotabrasil.com">suporte@protecaoveicularrotabrasil.com</a>
             </p>
             <p class="footer-copyright">
-                © 2020-2025 Rota Brasil - Todos os direitos reservados
+                © 2020-2025 <strong>DIEGO ROX</strong> - Rota Brasil - Todos os direitos reservados<br>
+                <small>CLUBE DE BENEFICIOS DE PROTECAO VEICULAR ROTA BRASIL - Proteção veicular com economia de até 70%</small>
             </p>
         </div>
     </footer>
