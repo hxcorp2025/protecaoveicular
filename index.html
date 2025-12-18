@@ -552,6 +552,72 @@
             text-decoration: underline;
         }
 
+        /* Legal Sections - Termos e Privacidade */
+        .legal-section {
+            background: var(--dark-gray);
+            padding: 80px 20px;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .legal-card {
+            background: var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .legal-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--yellow-primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legal-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin: 25px 0 12px 0;
+        }
+
+        .legal-card p, .legal-card li {
+            font-size: 14px;
+            color: var(--silver);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .legal-card ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .legal-card li {
+            margin-bottom: 8px;
+        }
+
+        .legal-card .legal-update {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
         /* Pre-Footer - Corporate Info */
         .corporate-section {
             background: var(--yellow-primary);
@@ -675,7 +741,7 @@
                 ingressos de cinema, shows, ebooks, cursos e descontos exclusivos nas maiores
                 lojas do Brasil e do mundo. Quanto mais pontos, mais você economiza!
             </p>
-            <a href="#contato" class="cta-button" title="Entrar no Diego Clube de Benefícios">Quero Fazer Parte</a>
+            <a href="https://diegoplanodebeneficios.com/" class="cta-button" title="Entrar no Diego Clube de Benefícios">Quero Fazer Parte</a>
         </div>
     </header>
 
@@ -922,6 +988,126 @@
         </div>
     </section>
 
+    <!-- Termos de Uso e Política de Privacidade -->
+    <section class="legal-section" id="termos">
+        <div class="container">
+            <h2 class="section-title">Termos e <span class="yellow">Privacidade</span></h2>
+            <div class="legal-grid">
+                <!-- Termos de Uso -->
+                <div class="legal-card" id="termos-de-uso">
+                    <h3>📋 Termos de Uso</h3>
+
+                    <h4>1. Aceitação dos Termos</h4>
+                    <p>Ao acessar e utilizar os serviços do <strong>Diego Clube de Benefícios</strong>, operado por <strong>60.846.881 Rodrigo Diego dos Santos Figueiredo</strong>, inscrito no CNPJ 60.846.881/0001-98, você concorda integralmente com estes Termos de Uso. Caso não concorde com qualquer disposição, solicitamos que não utilize nossos serviços.</p>
+
+                    <h4>2. Descrição dos Serviços</h4>
+                    <p>O Diego Clube de Benefícios é uma plataforma de programa de pontos que permite aos membros:</p>
+                    <ul>
+                        <li>Adquirir pacotes de pontos através de pagamento;</li>
+                        <li>Trocar pontos por recompensas como ingressos, ebooks, cupons de desconto e outros benefícios;</li>
+                        <li>Acessar ofertas exclusivas em estabelecimentos parceiros;</li>
+                        <li>Utilizar descontos em lojas físicas e online.</li>
+                    </ul>
+
+                    <h4>3. Cadastro e Conta do Usuário</h4>
+                    <p>Para utilizar os serviços, o usuário deve fornecer informações verdadeiras, completas e atualizadas. O usuário é responsável por manter a confidencialidade de sua senha e por todas as atividades realizadas em sua conta.</p>
+
+                    <h4>4. Pontos e Recompensas</h4>
+                    <ul>
+                        <li>Os pontos adquiridos não possuem prazo de validade;</li>
+                        <li>Os pontos são pessoais e intransferíveis;</li>
+                        <li>Os pontos não podem ser convertidos em dinheiro;</li>
+                        <li>O resgate de recompensas está sujeito à disponibilidade;</li>
+                        <li>Os valores em pontos das recompensas podem ser alterados sem aviso prévio.</li>
+                    </ul>
+
+                    <h4>5. Pagamentos e Reembolsos</h4>
+                    <p>Aceitamos pagamentos via cartão de crédito, PIX, boleto bancário e transferência. Reembolsos de pontos não utilizados podem ser solicitados em até 7 dias após a compra, conforme o Código de Defesa do Consumidor.</p>
+
+                    <h4>6. Obrigações do Usuário</h4>
+                    <p>O usuário compromete-se a utilizar os serviços de forma lícita, respeitando a legislação brasileira, os direitos de terceiros e estes Termos de Uso. É proibido qualquer uso fraudulento ou abusivo da plataforma.</p>
+
+                    <h4>7. Limitação de Responsabilidade</h4>
+                    <p>O Diego Clube de Benefícios não se responsabiliza por produtos ou serviços oferecidos por parceiros. A responsabilidade por tais produtos/serviços é exclusiva dos respectivos fornecedores.</p>
+
+                    <h4>8. Modificações dos Termos</h4>
+                    <p>Reservamo-nos o direito de modificar estes Termos a qualquer momento. As alterações entram em vigor imediatamente após sua publicação no site.</p>
+
+                    <h4>9. Foro</h4>
+                    <p>Fica eleito o foro da comarca de Contagem/MG para dirimir quaisquer questões oriundas destes Termos.</p>
+
+                    <p class="legal-update">Última atualização: Dezembro de 2025</p>
+                </div>
+
+                <!-- Política de Privacidade -->
+                <div class="legal-card" id="politica-de-privacidade">
+                    <h3>🔒 Política de Privacidade</h3>
+
+                    <h4>1. Introdução</h4>
+                    <p>Esta Política de Privacidade descreve como o <strong>Diego Clube de Benefícios</strong> coleta, usa, armazena e protege suas informações pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+
+                    <h4>2. Dados Coletados</h4>
+                    <p>Coletamos os seguintes tipos de dados:</p>
+                    <ul>
+                        <li><strong>Dados de identificação:</strong> nome completo, CPF, data de nascimento;</li>
+                        <li><strong>Dados de contato:</strong> e-mail, telefone, endereço;</li>
+                        <li><strong>Dados de pagamento:</strong> informações de cartão de crédito (processadas por gateway seguro);</li>
+                        <li><strong>Dados de navegação:</strong> IP, cookies, páginas acessadas, tempo de permanência;</li>
+                        <li><strong>Dados de transação:</strong> histórico de compras e resgates de pontos.</li>
+                    </ul>
+
+                    <h4>3. Finalidade do Tratamento</h4>
+                    <p>Utilizamos seus dados para:</p>
+                    <ul>
+                        <li>Processar compras de pontos e resgates de recompensas;</li>
+                        <li>Enviar comunicações sobre sua conta e benefícios;</li>
+                        <li>Personalizar sua experiência na plataforma;</li>
+                        <li>Cumprir obrigações legais e regulatórias;</li>
+                        <li>Prevenir fraudes e garantir a segurança;</li>
+                        <li>Melhorar nossos serviços e desenvolver novos recursos.</li>
+                    </ul>
+
+                    <h4>4. Compartilhamento de Dados</h4>
+                    <p>Seus dados podem ser compartilhados com:</p>
+                    <ul>
+                        <li>Parceiros comerciais para entrega de recompensas;</li>
+                        <li>Processadores de pagamento;</li>
+                        <li>Autoridades públicas quando exigido por lei;</li>
+                        <li>Prestadores de serviços de TI e hospedagem.</li>
+                    </ul>
+                    <p>Não vendemos ou alugamos seus dados pessoais a terceiros.</p>
+
+                    <h4>5. Segurança dos Dados</h4>
+                    <p>Implementamos medidas técnicas e organizacionais para proteger seus dados, incluindo criptografia SSL, firewalls, controle de acesso e monitoramento contínuo.</p>
+
+                    <h4>6. Seus Direitos (LGPD)</h4>
+                    <p>Você tem direito a:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento de dados;</li>
+                        <li>Acessar seus dados pessoais;</li>
+                        <li>Corrigir dados incompletos ou desatualizados;</li>
+                        <li>Solicitar a anonimização ou exclusão de dados;</li>
+                        <li>Revogar o consentimento a qualquer momento;</li>
+                        <li>Solicitar a portabilidade dos dados.</li>
+                    </ul>
+
+                    <h4>7. Cookies</h4>
+                    <p>Utilizamos cookies para melhorar sua experiência, analisar o tráfego do site e personalizar conteúdo. Você pode gerenciar as preferências de cookies nas configurações do seu navegador.</p>
+
+                    <h4>8. Retenção de Dados</h4>
+                    <p>Mantemos seus dados enquanto sua conta estiver ativa ou pelo período necessário para cumprir obrigações legais. Após o encerramento da conta, os dados serão mantidos por até 5 anos para fins fiscais e legais.</p>
+
+                    <h4>9. Contato do Encarregado (DPO)</h4>
+                    <p>Para exercer seus direitos ou esclarecer dúvidas sobre privacidade, entre em contato:</p>
+                    <p><strong>E-mail:</strong> diego@diegoplanodebeneficios.com<br>
+                    <strong>Telefone:</strong> (31) 99330-0548</p>
+
+                    <p class="legal-update">Última atualização: Dezembro de 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pre-Footer: Corporate Info -->
     <section class="corporate-section" itemscope itemtype="https://schema.org/Organization">
         <div class="container">
@@ -970,7 +1156,8 @@
             </p>
             <p class="footer-copyright">
                 © 2025 <strong>Diego</strong> - Clube de Benefícios - Todos os direitos reservados<br>
-                <small>60.846.881 Rodrigo Diego dos Santos Figueiredo - Transforme pontos em experiências incríveis!</small>
+                <small>60.846.881 Rodrigo Diego dos Santos Figueiredo - Transforme pontos em experiências incríveis!</small><br>
+                <a href="#termos-de-uso">Termos de Uso</a> | <a href="#politica-de-privacidade">Política de Privacidade</a> | <a href="https://diegoplanodebeneficios.com/">Acessar Plataforma</a>
             </p>
         </div>
     </footer>
